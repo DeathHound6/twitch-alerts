@@ -24,6 +24,7 @@ A web panel and bot for having a free and customisable Twitch Channel Alerts sys
 That's it up and running!
 
 ### Updating
+Copy your existing config.json file somewhere else in case the update modifies the layout
 - Download git, as stated above
 - Use the `cd` command in your terminal to move into the software folder
 - Run the command `git pull` in your terminal

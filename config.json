@@ -1,8 +1,22 @@
 {
     "username": "deathhound246",
     "events": {
-        "anonsubgift": {},
-        "anonsubmysterygift": {},
+        "anonsubgift": {
+            "enabled": false,
+            "image": "default.",
+            "audio": "default.",
+            "timeout": 10000,
+            "alertText": "{recipient} has been anonymously gifted a sub with a {streakMonths} months streak",
+            "chatText": "{recipient} has been anonymously gifted a sub with a {streakMonths} months streak"
+        },
+        "anonsubmysterygift": {
+            "enabled": true,
+            "image": "default.",
+            "audio": "default.",
+            "timeout": 10000,
+            "alertText": "An anonymous viewer has gifted {numbOfSubs} to the channel",
+            "chatText": "An anonymous viewer has gifted {numbOfSubs} to the channel"
+        },
         "cheer": {},
         "hosted": {
             "enabled": true,
@@ -13,20 +27,53 @@
             "alertText": "{username} has just started hosting for {viewers} viewers",
             "chatText": "{username} has just started hosting for {viewers} viewers"
         },
-        "message": {},
         "raided": {
             "enabled": true,
             "image": "default.",
             "audio": "default.",
             "timeout": 10000,
-            "text": {
-                "format": "{viewerName} has just raided with {viewers} raiders"
-            }
+            "alertText": "{username} has just raided with {viewers} raiders",
+            "chatText": "{username} has just raided with {viewers} raiders"
         },
-        "redeem": {},
-        "resub": {},
-        "subgift": {},
-        "submysterygift": {},
-        "subscription": {}
+        "redeem": {
+            "enabled": false,
+            "image": "default.",
+            "audio": "default.",
+            "timeout": 10000,
+            "alertText": "{username} has redeemed {rewardType}",
+            "chatText": "{username} has redeemed {rewardType}"
+        },
+        "resub": {
+            "enabled": true,
+            "image": "default.",
+            "audio": "default.",
+            "timeout": 10000,
+            "alertText": "{username} has resubbed for {months} months",
+            "chatText": "{username} has resubbed for {months} months"
+        },
+        "subgift": {
+            "enabled": true,
+            "image": "default.",
+            "audio": "default.",
+            "timeout": 10000,
+            "alertText": "{username} has gifted a sub to {recipient}. They are on a {streakMonths} months streak",
+            "chatText": "{username} has gifted a sub to {recipient}. They are on a {streakMonths} months streak"
+        },
+        "submysterygift": {
+            "enabled": true,
+            "image": "default.",
+            "audio": "default.",
+            "timeout": 10000,
+            "alertText": "{username} has gifted {numbOfSub} subs to the community",
+            "chatText": "{username} has gifted {numbOfSub} subs to the community"
+        },
+        "subscription": {
+            "enabled": true,
+            "image": "default.",
+            "audio": "default.",
+            "timeout": 10000,
+            "alertText": "{username} has subbed to the channel",
+            "chatText": "{username} has subbed to the channel"
+        }
     }
 }
