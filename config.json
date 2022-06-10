@@ -1,0 +1,32 @@
+{
+    "username": "deathhound246",
+    "events": {
+        "anonsubgift": {},
+        "anonsubmysterygift": {},
+        "cheer": {},
+        "hosted": {
+            "enabled": true,
+            "image": "default.",
+            "audio": "default.",
+            "timeout": 10000,
+            "triggerOnAutohost": false,
+            "alertText": "{username} has just started hosting for {viewers} viewers",
+            "chatText": "{username} has just started hosting for {viewers} viewers"
+        },
+        "message": {},
+        "raided": {
+            "enabled": true,
+            "image": "default.",
+            "audio": "default.",
+            "timeout": 10000,
+            "text": {
+                "format": "{viewerName} has just raided with {viewers} raiders"
+            }
+        },
+        "redeem": {},
+        "resub": {},
+        "subgift": {},
+        "submysterygift": {},
+        "subscription": {}
+    }
+}

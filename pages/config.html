@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+    <head>
+        <title>Configuration</title>
+        <meta charset="UTF-8">
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <div>
+            <p id="error" style="text-align: center;"></p>
+            <div id="config-panel">
+                <h2>Events Config</h2>
+                <button id="save-button">Save</button>
+            </div>
+        </div>
+
+        <script src="/public/socket.io.min.js"></script>
+        <script>
+            let config = null;
+            const socket = io("localhost:8889", {
+                path: "/",
+                transports: ["websocket"]
+            });
+            socket.on("connect", () => {
+                console.log("Connected to WS server");
+                socket.emit("request-config");
+            });
+            socket.on("retrieve-config", (conf) => {
+                config = conf;
+                document.getElementById("save-button").disabled = false;
+            });
+            socket.on("set-config", (success) => {
+                const element = document.getElementById("error");
+                if (success) {
+                    element.style.color = "green";
+                    element.innerText = "Successfully updated the configuration";
+                } else {
+                    element.style.color = "red";
+                    element.innerText = "Failed to update the configuration";
+                }
+                // hide the element after 10 seconds
+                setTimeout(()=>{
+                    element.style.display = "hidden";
+                }, 10000);
+            });
+            document.getElementById("save-button").onclick = function() {
+                socket.emit("request-set-config", config);
+            }
+        </script>
+    </body>
+</html>

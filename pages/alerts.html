@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+    <head>
+        <title>Twitch Alerts</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="alert-box"></div>
+
+        <script src="/public/socket.io.js"></script>
+        <script>
+            const socket = io("localhost:8889", {
+                path: "/",
+                transports: ["websocket"]
+            });
+            socket.on("connect", () => {
+                console.log("Connected to WS server");
+            });
+            socket.on("alert", (alertConfig) => {
+                const element = document.getElementById("alert-box");
+                let html = "";
+                if (alertConfig.image)
+                    html += `<img src='${alertConfig.image}'><br>`;
+                element.innerHTML = `${html}<p>${alertConfig.text}</p>`;
+                new Audio(`audio/${alertConfig.audio}`).play().catch(()=>{});
+                setTimeout(()=>{
+                    element.innerHTML = "";
+                }, alertConfig.timeout);
+            });
+          </script>
+    </body>
+</html>
