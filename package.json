@@ -1,0 +1,20 @@
+{
+    "name": "twitch-alerts",
+    "description": "A web panel and bot for having a free and customisable Twitch Channel Alerts system",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "node ."
+    },
+    "author": {
+        "email": "acraig176@hotmail.com",
+        "name": "DeathHound6"
+    },
+    "dependencies": {
+        "axios": "^0.27.2",
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1",
+        "socket.io": "^4.5.1",
+        "tmi.js": "^1.8.5"
+    }
+}
